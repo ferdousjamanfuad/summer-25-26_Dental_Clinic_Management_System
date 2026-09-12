@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local database/config files
+config/database.local.php
+
+# Logs
+*.log
+logs/
+
+# PHP temporary/cache files
+*.tmp
+*.temp
+*.cache
+
+# User-uploaded/generated files
+uploads/
+storage/
+
+# Local backups / database dumps
+*.sql.bak
+*.dump
+*.sqlite
+*.sqlite3
+
+# OS / editor temporary files
+*.bak
+*~
