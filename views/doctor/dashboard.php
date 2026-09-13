@@ -14,9 +14,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="alert alert-error"><?= esc($error) ?></div>
 <?php endif; ?>
 
-<!-- ========================================== -->
-<!-- FEATURE 1: APPOINTMENT QUEUE               -->
-<!-- ========================================== -->
+<!-- Appointment Queue -->
 <?php if($action === 'queue'): ?>
     
     <div class="card">
@@ -63,9 +61,7 @@ require __DIR__ . '/../partials/header.php';
         </table>
     </div>
 
-<!-- ========================================== -->
-<!-- FEATURE 2: GENERATE PRESCRIPTION           -->
-<!-- ========================================== -->
+<!-- Prescription Form -->
 <?php elseif($action === 'prescribe'): ?>
     
     <div class="card">
@@ -110,9 +106,7 @@ require __DIR__ . '/../partials/header.php';
         }
     </script>
 
-<!-- ========================================== -->
-<!-- FEATURE 3: PATIENT LIST CHECKUP (Details)  -->
-<!-- ========================================== -->
+<!-- My Patients -->
 <?php elseif($action === 'patients'): ?>
     
     <div class="card">

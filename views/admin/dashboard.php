@@ -16,9 +16,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="alert alert-error"><?= esc($error) ?></div>
 <?php endif; ?>
 
-<!-- ========================================== -->
-<!-- CRUD: SYSTEM USERS                         -->
-<!-- ========================================== -->
+<!-- User Accounts -->
 <?php if($action === 'users'): ?>
     
     <div class="card">
@@ -86,9 +84,7 @@ require __DIR__ . '/../partials/header.php';
         </table>
     </div>
 
-<!-- ========================================== -->
-<!-- FEATURE 1: EQUIPMENT CHECK                 -->
-<!-- ========================================== -->
+<!-- Clinic Equipment -->
 <?php elseif($action === 'equipment'): ?>
     
     <div class="card">
@@ -136,9 +132,7 @@ require __DIR__ . '/../partials/header.php';
         </table>
     </div>
 
-<!-- ========================================== -->
-<!-- FEATURE 2: MONTHLY REPORT & MONITOR        -->
-<!-- ========================================== -->
+<!-- Monthly Reports -->
 <?php elseif($action === 'report'): ?>
     
     <div class="card">
@@ -163,9 +157,7 @@ require __DIR__ . '/../partials/header.php';
         </div>
     </div>
 
-<!-- ========================================== -->
-<!-- FEATURE 3: DOCTOR AVAILABILITY SET         -->
-<!-- ========================================== -->
+<!-- Doctor Schedules -->
 <?php elseif($action === 'doctor_availability'): ?>
     
     <div class="card">

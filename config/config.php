@@ -5,7 +5,7 @@
 
 session_start();
 
-define('APP_NAME', 'Dental Clinic Management System');
+define('APP_NAME', 'Safe Plus Dental Care');
 define('CURRENCY', '৳');
 define('SESSION_TIMEOUT', 1800); // 30 minutes
 
@@ -14,7 +14,6 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'dental_clinic_db');
 
-// Report strict errors but catch them so the user doesn't see a raw 500 error
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {

@@ -15,9 +15,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="alert alert-error"><?= esc($error) ?></div>
 <?php endif; ?>
 
-<!-- ========================================== -->
-<!-- FEATURE 3: MY APPOINTMENTS & PAYMENTS      -->
-<!-- ========================================== -->
+<!-- My Appointments -->
 <?php if($action === 'appointments'): ?>
     
     <div class="card">
@@ -81,9 +79,7 @@ require __DIR__ . '/../partials/header.php';
         </table>
     </div>
 
-<!-- ========================================== -->
-<!-- FEATURE 1: SERIAL CHECKING & BOOKING       -->
-<!-- ========================================== -->
+<!-- Book Appointment -->
 <?php elseif($action === 'book'): ?>
     
     <div class="card" style="max-width: 600px; margin: 0 auto;">
@@ -156,9 +152,7 @@ require __DIR__ . '/../partials/header.php';
         }
     </script>
 
-<!-- ========================================== -->
-<!-- FEATURE 2: VIEW PRESCRIPTIONS              -->
-<!-- ========================================== -->
+<!-- Prescriptions -->
 <?php elseif($action === 'prescriptions'): ?>
     
     <div class="card">

@@ -1,9 +1,6 @@
 <?php
 // ================================================================
 // CONTROLLER: RECEPTIONIST
-// Feature 1: Generate Bills
-// Feature 2: Appointment Scheduling (Confirm/Cancel)
-// Feature 3: Equipment Assign
 // ================================================================
 
 function receptionist_controller($conn) {
@@ -11,7 +8,7 @@ function receptionist_controller($conn) {
     $me = current_user();
     $error = '';
 
-    /* -------- Feature 2: Appointment Scheduling (Status Update) -------- */
+    /* -------- Appointment Scheduling -------- */
     if ($action === 'update_appointment' && is_post()) {
         csrf_check();
         $appointment_id = (int)($_POST['appointment_id'] ?? 0);
@@ -30,7 +27,7 @@ function receptionist_controller($conn) {
         redirect('index.php?page=receptionist&action=appointments');
     }
 
-    /* -------- Feature 1: Generate Bills & Payments -------- */
+    /* -------- Billing & Invoices -------- */
     if ($action === 'generate_bill' && is_post()) {
         csrf_check();
         $appointment_id = (int)($_POST['appointment_id'] ?? 0);
@@ -63,7 +60,7 @@ function receptionist_controller($conn) {
         redirect('index.php?page=receptionist&action=billing');
     }
 
-    /* -------- Feature 3: Equipment Assign -------- */
+    /* -------- Equipment Assignment -------- */
     if ($action === 'assign_equipment' && is_post()) {
         csrf_check();
         $equipment_id = (int)($_POST['equipment_id'] ?? 0);

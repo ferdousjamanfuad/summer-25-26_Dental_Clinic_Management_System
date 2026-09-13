@@ -1,9 +1,6 @@
 <?php
 // ================================================================
 // CONTROLLER: DOCTOR
-// Feature 1: Check Appointment Queue
-// Feature 2: Generate Prescription
-// Feature 3: Patient List Checkup with Details
 // ================================================================
 
 function doctor_controller($conn) {
@@ -11,7 +8,7 @@ function doctor_controller($conn) {
     $me = current_user();
     $error = '';
 
-    /* -------- Feature 2: Generate Prescription -------- */
+    /* -------- Prescription Management -------- */
     if ($action === 'save_prescription' && is_post()) {
         csrf_check();
         $appointment_id = (int)($_POST['appointment_id'] ?? 0);
@@ -50,7 +47,6 @@ function doctor_controller($conn) {
 
     /* -------- Fetch Data for Views -------- */
     if ($action === 'queue') {
-        // Feature 1: Check Appointment Queue (Pending / Confirmed)
         $appointments = get_doctor_appointments($conn, $me['id']);
     } elseif ($action === 'prescribe') {
         $id = (int)($_GET['id'] ?? 0);
@@ -60,7 +56,6 @@ function doctor_controller($conn) {
             redirect('index.php?page=doctor&action=queue');
         }
     } elseif ($action === 'patients') {
-        // Feature 3: Patient List
         $patients = get_patients_by_doctor($conn, $me['id']);
     } elseif ($action === 'patient_details') {
         $id = (int)($_GET['id'] ?? 0);

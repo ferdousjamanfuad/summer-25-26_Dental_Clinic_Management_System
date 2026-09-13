@@ -1,10 +1,6 @@
 <?php
 // ================================================================
-// CONTROLLER: ADMIN dashboard
-// CRUD  : user accounts (every role)
-// Extras: 1) equipment inventory check & manage
-//         2) monthly report & activity monitor
-//         3) doctor availability & shift schedule
+// CONTROLLER: ADMIN
 // ================================================================
 
 function admin_controller($conn) {
@@ -12,7 +8,7 @@ function admin_controller($conn) {
     $me = current_user();
     $error = '';
 
-    /* -------- CRUD: SYSTEM USERS -------- */
+    /* -------- User Management -------- */
     if ($action === 'add_user' && is_post()) {
         csrf_check();
         $name = trim($_POST['name'] ?? '');
@@ -46,7 +42,7 @@ function admin_controller($conn) {
         redirect('index.php?page=admin&action=users');
     }
 
-    /* -------- Feature 1: Equipment Check / Manage -------- */
+    /* -------- Equipment Management -------- */
     if ($action === 'add_equipment' && is_post()) {
         csrf_check();
         $name = trim($_POST['name'] ?? '');
@@ -62,7 +58,7 @@ function admin_controller($conn) {
         redirect('index.php?page=admin&action=equipment');
     }
 
-    /* -------- Feature 3: Doctor Availability Set -------- */
+    /* -------- Doctor Schedules -------- */
     if ($action === 'set_schedule' && is_post()) {
         csrf_check();
         $doctor_id   = (int)($_POST['doctor_id'] ?? 0);
@@ -99,7 +95,7 @@ function admin_controller($conn) {
     } elseif ($action === 'equipment') {
         $equipments = get_equipments($conn);
     } elseif ($action === 'report') {
-        // Feature 2: Monthly report & monitor stats
+        // Monthly report stats
         $all_users = get_users($conn);
         $stats = [
             'total_users'        => count($all_users),

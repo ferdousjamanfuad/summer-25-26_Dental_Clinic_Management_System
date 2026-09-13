@@ -1,9 +1,6 @@
 <?php
 // ================================================================
 // CONTROLLER: PATIENT
-// Feature 1: Serial Checking & Booking
-// Feature 2: View Prescriptions
-// Feature 3: Payment Selection
 // ================================================================
 
 function patient_controller($conn) {
@@ -11,7 +8,7 @@ function patient_controller($conn) {
     $me = current_user();
     $error = '';
 
-    /* -------- Feature 1: Serial Checking & Booking -------- */
+    /* -------- Appointment Booking -------- */
     if ($action === 'save_booking' && is_post()) {
         csrf_check();
         $doctor_id = (int)($_POST['doctor_id'] ?? 0);
@@ -33,7 +30,7 @@ function patient_controller($conn) {
         redirect('index.php?page=patient&action=appointments');
     }
 
-    /* -------- Feature 3: Payment Selection -------- */
+    /* -------- Payment Selection -------- */
     if ($action === 'update_payment' && is_post()) {
         csrf_check();
         $appointment_id = (int)($_POST['appointment_id'] ?? 0);
@@ -54,17 +51,14 @@ function patient_controller($conn) {
 
     /* -------- Fetch Data for Views -------- */
     if ($action === 'appointments') {
-        // Fetch patient's appointments (includes payment selection)
         $appointments = get_patient_appointments($conn, $me['id']);
     } elseif ($action === 'book') {
-        // Fetch active doctors and their schedules for the booking form
         $doctors = get_users($conn, 'doctor');
         $schedules = [];
         foreach ($doctors as $doc) {
             $schedules[$doc['id']] = get_doctor_schedules($conn, $doc['id']);
         }
     } elseif ($action === 'prescriptions') {
-        // Feature 2: View Prescriptions
         $history = get_patient_history($conn, $me['id']);
     }
 

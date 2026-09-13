@@ -15,9 +15,7 @@ require __DIR__ . '/../partials/header.php';
     <div class="alert alert-error"><?= esc($error) ?></div>
 <?php endif; ?>
 
-<!-- ========================================== -->
-<!-- FEATURE 2: MANAGE APPOINTMENTS             -->
-<!-- ========================================== -->
+<!-- Manage Appointments -->
 <?php if($action === 'appointments'): ?>
     
     <div class="card">
@@ -74,9 +72,7 @@ require __DIR__ . '/../partials/header.php';
         </table>
     </div>
 
-<!-- ========================================== -->
-<!-- FEATURE 1: BILLING & INVOICES              -->
-<!-- ========================================== -->
+<!-- Billing & Invoices -->
 <?php elseif($action === 'billing'): ?>
     
     <div class="card" style="margin-bottom: 20px;">
@@ -164,9 +160,7 @@ require __DIR__ . '/../partials/header.php';
         </table>
     </div>
 
-<!-- ========================================== -->
-<!-- FEATURE 3: ASSIGN EQUIPMENT                -->
-<!-- ========================================== -->
+<!-- Assign Equipment -->
 <?php elseif($action === 'equipment'): ?>
     
     <div class="card">
