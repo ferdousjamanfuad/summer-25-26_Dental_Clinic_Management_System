@@ -108,3 +108,20 @@ function update_payment_method($conn, $appointment_id, $patient_id, $payment_met
     mysqli_stmt_close($stmt);
     return $success;
 }
+
+// Gets ALL appointments (for Receptionist)
+function get_all_appointments($conn) {
+    $sql = "SELECT a.*, p.name as patient_name, d.name as doctor_name 
+            FROM appointments a 
+            JOIN users p ON a.patient_id = p.id 
+            JOIN users d ON a.doctor_id = d.id 
+            ORDER BY a.appointment_date DESC, a.appointment_time DESC";
+    $result = mysqli_query($conn, $sql);
+    $rows = [];
+    if($result) {
+        while ($r = mysqli_fetch_assoc($result)) {
+            $rows[] = $r;
+        }
+    }
+    return $rows;
+}
