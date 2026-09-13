@@ -4,11 +4,26 @@
 .LSOverride
 __MACOSX/
 
-# IDE / Editor
+# Windows OS
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# IDE / Editor (VS Code, Visual Studio, JetBrains)
 .vscode/
 .idea/
+.vs/
 *.swp
 *.swo
+*.code-workspace
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
 # Environment / secrets
 .env
