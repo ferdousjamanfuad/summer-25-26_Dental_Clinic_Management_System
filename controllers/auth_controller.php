@@ -103,4 +103,4 @@ function logout_controller($conn) {
     set_flash('success', 'You have been logged out safely.');
     redirect('index.php?page=login');
 }
-?>
+

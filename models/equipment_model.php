@@ -26,7 +26,7 @@ function add_equipment($conn, $name, $description, $quantity) {
     mysqli_stmt_close($stmt);
     return $success;
 }
-?>
+
 
 function assign_equipment($conn, $equipment_id, $doctor_id) {
     $sql = "UPDATE equipment SET assigned_to = ?, status = 'in_use' WHERE id = ?";

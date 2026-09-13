@@ -55,4 +55,4 @@ function update_bill_payment($conn, $bill_id, $paid_amount, $status) {
     mysqli_stmt_close($stmt);
     return $success;
 }
-?>
+

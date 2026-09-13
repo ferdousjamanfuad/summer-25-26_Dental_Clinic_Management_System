@@ -131,4 +131,4 @@ function valid_date($date) {
     $parts = explode('-', $date);
     return count($parts) === 3 && checkdate((int)$parts[1], (int)$parts[2], (int)$parts[0]);
 }
-?>
+

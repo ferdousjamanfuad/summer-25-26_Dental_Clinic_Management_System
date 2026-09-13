@@ -112,4 +112,4 @@ function admin_controller($conn) {
     // Load the Admin Dashboard View
     require __DIR__ . '/../views/admin/dashboard.php';
 }
-?>
+
