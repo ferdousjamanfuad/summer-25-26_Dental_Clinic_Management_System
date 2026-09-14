@@ -19,15 +19,15 @@ function admin_controller($conn) {
         $role = $_POST['role'] ?? 'patient';
         
         if (is_blank($name) || is_blank($email) || is_blank($password) || is_blank($username)) {
-            $error = "Name, email, username and password are required.";
+            set_flash('error', "Name, email, username and password are required.");
         } else {
             if (add_user($conn, $name, $email, $contact, $username, $password, $role, 'active')) {
                 set_flash('success', 'User added successfully!');
-                redirect('index.php?page=admin&action=users');
             } else {
-                $error = "Failed to add user. Username or email might exist.";
+                set_flash('error', "Failed to add user. Username or email might already exist.");
             }
         }
+        redirect('index.php?page=admin&action=users');
     }
 
     if ($action === 'status') {
